@@ -16,7 +16,7 @@
 
 const rewire = require('rewire');
 const FabricCAClientRewire = rewire('../lib/FabricCAClient.js');
-const CryptoSuite = require('../lib/impl/CryptoSuite_ECDSA_AES.js');
+const CryptoSuite = require('../../fabric-client/lib/impl/CryptoSuite_ECDSA_AES.js');
 
 const http = require('http');
 const https = require('https');
@@ -25,6 +25,7 @@ const events = require('events');
 const chai = require('chai');
 const should = chai.should();
 const sinon = require('sinon');
+
 
 describe('FabricCAClient', () => {
 
@@ -66,7 +67,8 @@ describe('FabricCAClient', () => {
 			const connect_opts = {
 				caname: 'test-ca-name',
 				protocol: 'https',
-				hostname: 'testHost'
+				hostname: 'testHost',
+				path: '/api/v1/' 
 			};
 
 			const cryptoPrimitives = 'test primitives';
@@ -778,7 +780,8 @@ describe('FabricCAClient', () => {
 			const connect_opts = {
 				caname: 'test-ca-name',
 				protocol: 'http',
-				hostname: 'testHost'
+				hostname: 'testHost',
+				path: '/api/v1/'
 			};
 
 			requestStub.callsFake((options, callback) => {
@@ -1072,7 +1075,8 @@ describe('FabricCAClient', () => {
 			const connect_opts = {
 				caname: 'test-ca-name',
 				protocol: 'http',
-				hostname: 'testHost'
+				hostname: 'testHost',
+				path: '/api/v1/'
 			};
 
 			requestStub.callsFake((options, callback) => {

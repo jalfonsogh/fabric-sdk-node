@@ -75,7 +75,7 @@ const FabricCAClient = class {
 				this._tlsOptions.trustedRoots = [];
 			}
 		}
-		this._baseAPI = '/api/v1/';
+		this._baseAPI = connect_opts.path;
 
 		this._cryptoPrimitives = cryptoPrimitives;
 

@@ -8,10 +8,10 @@
 'use strict';
 
 const utils = require('./utils.js');
-const BaseClient = require('./BaseClient');
+const BaseClient = require('../../fabric-client/lib/BaseClient');
 const FabricCAClient = require('./FabricCAClient');
 
-const normalizeX509 = require('./BaseClient').normalizeX509;
+const normalizeX509 = require('../../fabric-client/lib/BaseClient').normalizeX509;
 const util = require('util');
 const parseURL = require('./helper').parseURL;
 const path = require('path');

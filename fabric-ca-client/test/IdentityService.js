@@ -18,7 +18,7 @@ const IdentityService = require('../lib/IdentityService');
 const IdentityServiceRewire = rewire('../lib/IdentityService');
 
 const FabricCAClient = require('../lib/FabricCAClient');
-const User = require('../lib/User');
+const User = require('../../fabric-client/lib/User');
 
 require('chai').should();
 const sinon = require('sinon');
